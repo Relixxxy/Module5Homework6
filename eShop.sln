@@ -1,8 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Catalog", "Catalog", "{E769E2A0-66AF-44D6-9300-C45D3889E06A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.Host", "Catalog\Catalog.Host\Catalog.Host.csproj", "{6A8E9683-762E-4E83-BD60-75822AC8265D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalog.Host", "Catalog\Catalog.Host\Catalog.Host.csproj", "{6A8E9683-762E-4E83-BD60-75822AC8265D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{DCFFDCA1-598D-4EA6-AAF6-4BE647B27C32}"
 	ProjectSection(SolutionItems) = preProject
@@ -13,15 +16,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionIt
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{A6C7B2CD-2199-497C-9EF5-32274390D2D7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.UnitTests", "Catalog\Catalog.UnitTests\Catalog.UnitTests.csproj", "{2B3EB826-D059-4357-B041-2898690F13E8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalog.UnitTests", "Catalog\Catalog.UnitTests\Catalog.UnitTests.csproj", "{2B3EB826-D059-4357-B041-2898690F13E8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure\Infrastructure.csproj", "{99E9BED6-7C74-4B3F-B841-451EC61F1318}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Infrastructure\Infrastructure\Infrastructure.csproj", "{99E9BED6-7C74-4B3F-B841-451EC61F1318}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.UnitTests", "Infrastructure\Infrastructure.UnitTests\Infrastructure.UnitTests.csproj", "{456C68DA-7E0A-481E-B500-8A65E8C557F1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure.UnitTests", "Infrastructure\Infrastructure.UnitTests\Infrastructure.UnitTests.csproj", "{456C68DA-7E0A-481E-B500-8A65E8C557F1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{CCC829D0-5F4F-414E-8FDD-6372656E1AE3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC", "Web\MVC\MVC.csproj", "{C07F6930-2F6F-460F-99AD-2EFCB3BD9715}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MVC", "Web\MVC\MVC.csproj", "{C07F6930-2F6F-460F-99AD-2EFCB3BD9715}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Proxy", "Proxy", "{54C74A1B-6D46-4CC6-A8B4-39B1302EDFDE}"
 EndProject
@@ -30,6 +33,11 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "images", "images", "{CB7B93BE-FAA3-4498-912C-D65BDF944263}"
 	ProjectSection(SolutionItems) = preProject
 		Proxy\assets\images\1.png = Proxy\assets\images\1.png
+		Proxy\assets\images\10.png = Proxy\assets\images\10.png
+		Proxy\assets\images\11.png = Proxy\assets\images\11.png
+		Proxy\assets\images\12.png = Proxy\assets\images\12.png
+		Proxy\assets\images\13.png = Proxy\assets\images\13.png
+		Proxy\assets\images\14.png = Proxy\assets\images\14.png
 		Proxy\assets\images\2.png = Proxy\assets\images\2.png
 		Proxy\assets\images\3.png = Proxy\assets\images\3.png
 		Proxy\assets\images\4.png = Proxy\assets\images\4.png
@@ -38,11 +46,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "images", "images", "{CB7B93
 		Proxy\assets\images\7.png = Proxy\assets\images\7.png
 		Proxy\assets\images\8.png = Proxy\assets\images\8.png
 		Proxy\assets\images\9.png = Proxy\assets\images\9.png
-		Proxy\assets\images\10.png = Proxy\assets\images\10.png
-		Proxy\assets\images\11.png = Proxy\assets\images\11.png
-		Proxy\assets\images\12.png = Proxy\assets\images\12.png
-		Proxy\assets\images\13.png = Proxy\assets\images\13.png
-		Proxy\assets\images\14.png = Proxy\assets\images\14.png
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "gateway", "gateway", "{2167BBAD-8899-47A8-8AFE-DEA70EF8611B}"
@@ -56,7 +59,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "conf.d", "conf.d", "{F6BEB0
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IdentityServer", "IdentityServer", "{5754DE66-007D-4B94-9574-36763DDD4516}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServer", "IdentityServer\IdentityServer\IdentityServer.csproj", "{ED59CFCD-8450-4790-B736-554C5493A46F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServer", "IdentityServer\IdentityServer\IdentityServer.csproj", "{ED59CFCD-8450-4790-B736-554C5493A46F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Basket", "Basket\Basket\Basket.csproj", "{6CB7BA54-0841-4D17-BD32-8A7C7A0B429C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Basket", "Basket", "{C364CA45-F46A-43F4-91C4-505A1188FFD1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -88,6 +95,13 @@ Global
 		{ED59CFCD-8450-4790-B736-554C5493A46F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ED59CFCD-8450-4790-B736-554C5493A46F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ED59CFCD-8450-4790-B736-554C5493A46F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CB7BA54-0841-4D17-BD32-8A7C7A0B429C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CB7BA54-0841-4D17-BD32-8A7C7A0B429C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CB7BA54-0841-4D17-BD32-8A7C7A0B429C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CB7BA54-0841-4D17-BD32-8A7C7A0B429C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{6A8E9683-762E-4E83-BD60-75822AC8265D} = {E769E2A0-66AF-44D6-9300-C45D3889E06A}
@@ -101,5 +115,9 @@ Global
 		{5E71A157-50BB-439B-8F59-C17B9200EBFA} = {2167BBAD-8899-47A8-8AFE-DEA70EF8611B}
 		{F6BEB0F3-B23D-4D37-A01A-87D057796F2E} = {5E71A157-50BB-439B-8F59-C17B9200EBFA}
 		{ED59CFCD-8450-4790-B736-554C5493A46F} = {5754DE66-007D-4B94-9574-36763DDD4516}
+		{6CB7BA54-0841-4D17-BD32-8A7C7A0B429C} = {C364CA45-F46A-43F4-91C4-505A1188FFD1}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0BBE1932-C5C1-43FE-AF7E-EA07AD4DE7B1}
 	EndGlobalSection
 EndGlobal
