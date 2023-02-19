@@ -1,5 +1,10 @@
+using Basket.Host;
+using Basket.Host.Services;
+using Basket.Host.Services.Interfaces;
 using Infrastructure.Extensions;
 using Infrastructure.Filters;
+using Infrastructure.Services;
+using Infrastructure.Services.Interfaces;
 using Microsoft.OpenApi.Models;
 
 var configuration = GetConfiguration();
@@ -47,6 +52,11 @@ builder.AddConfiguration();
 
 builder.Services.AddAuthorization(configuration);
 
+builder.Services.AddHttpClient();
+builder.Services.Configure<AppSettings>(configuration);
+builder.Services.AddTransient<IInternalHttpClientService, InternalHttpClientService>();
+builder.Services.AddTransient<IBasketService, BasketService>();
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy(
@@ -63,7 +73,7 @@ var app = builder.Build();
 app.UseSwagger()
     .UseSwaggerUI(setup =>
     {
-        setup.SwaggerEndpoint($"{configuration["PathBase"]}/swagger/v1/swagger.json", "Basket.API V1");
+        setup.SwaggerEndpoint($"{configuration["PathBase"]}/swagger/v1/swagger.json", "Basket.Host.API V1");
         setup.OAuthClientId("basketswaggerui");
         setup.OAuthAppName("Basket Swagger UI");
     });
