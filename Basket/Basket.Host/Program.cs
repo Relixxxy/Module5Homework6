@@ -90,6 +90,12 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapDefaultControllerRoute();
+    endpoints.MapControllers();
+});
+
 app.Run();
 
 IConfiguration GetConfiguration()
