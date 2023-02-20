@@ -1,4 +1,5 @@
 ﻿using Infrastructure.Services.Interfaces;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 using MVC.Dtos;
 using MVC.Models.Enums;
 using MVC.Services.Interfaces;
@@ -21,6 +22,8 @@ public class CatalogService : ICatalogService
 
     public async Task<Catalog> GetCatalogItems(int page, int take, int? brand, int? type)
     {
+        await TestBasketEndpoints();
+
         var filters = new Dictionary<CatalogTypeFilter, int>();
 
         if (brand.HasValue)
@@ -86,5 +89,14 @@ public class CatalogService : ICatalogService
         };
 
         return list;
+    }
+
+    private async Task TestBasketEndpoints()
+    {
+        await _httpClient.SendAsync<object, object>($"{_settings.Value.BasketUrl}/testlog",
+           HttpMethod.Post, null);
+
+        await _httpClient.SendAsync<object, object>($"{_settings.Value.BasketUrl}/loguserid",
+           HttpMethod.Post, null);
     }
 }

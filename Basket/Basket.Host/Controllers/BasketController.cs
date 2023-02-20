@@ -23,6 +23,7 @@ public class BasketController : ControllerBase
     }
 
     [HttpPost]
+    [AllowAnonymous]
     [ProducesResponseType(typeof(AddItemResponse<int?>), (int)HttpStatusCode.OK)]
     public async Task<AddItemResponse<int?>> AddProductToCatalog(CreateProductRequest request)
     {

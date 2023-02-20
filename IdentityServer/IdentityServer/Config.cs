@@ -30,7 +30,6 @@ namespace IdentityServer
                 {
                     Scopes = new List<Scope>
                     {
-                        new Scope("catalog.catalogbff"),
                         new Scope("catalog.catalogitem"),
                     },
                 },
@@ -38,7 +37,6 @@ namespace IdentityServer
                 {
                     Scopes = new List<Scope>
                     {
-                        new Scope("basket.basketbff"),
                         new Scope("basket.basket"),
                     },
                 },
@@ -76,6 +74,22 @@ namespace IdentityServer
                 },
                 new Client
                 {
+                    ClientId = "basket",
+
+                    // no interactive user, use the clientid/secret for authentication
+                    AllowedGrantTypes = GrantTypes.ClientCredentials,
+                    AllowedScopes =
+                    {
+                        "catalog.catalogitem"
+                    },
+                    // secret for authentication
+                    ClientSecrets =
+                    {
+                        new Secret("secret".Sha256())
+                    },
+                },
+                new Client
+                {
                     ClientId = "catalogswaggerui",
                     ClientName = "Catalog Swagger UI",
                     AllowedGrantTypes = GrantTypes.Implicit,
@@ -86,7 +100,7 @@ namespace IdentityServer
 
                     AllowedScopes =
                     {
-                        "mvc", "catalog.catalogbff", "catalog.catalogitem"
+                        "mvc", "catalog.catalogitem"
                     }
                 },
                 new Client
@@ -101,7 +115,7 @@ namespace IdentityServer
 
                     AllowedScopes =
                     {
-                        "mvc", "basket.basketbff", "basket.basket"
+                        "mvc", "basket.basket"
                     }
                 },
             };

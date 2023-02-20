@@ -26,7 +26,7 @@ public class BasketService : IBasketService
             HttpMethod.Post,
             item);
 
-        _logger.LogInformation($"Item added with id {result.Id}");
+        _logger.LogInformation(result.ToString());
 
         return result.Id;
     }
