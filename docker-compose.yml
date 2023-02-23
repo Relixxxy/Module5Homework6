@@ -25,6 +25,7 @@ services:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=http://+:5001
       - CatalogUrl=http://www.alevelwebsite.com:5000/api/v1/catalogbff
+      - BasketUrl=http://www.alevelwebsite.com:5003/api/v1/basketbff
       - Authorization__Authority=http://www.alevelwebsite.com:5002
       - IdentityUrl=http://www.alevelwebsite.com:5002
       - CallBackUrl=http://www.alevelwebsite.com/
@@ -46,6 +47,19 @@ services:
       - CatalogApi=http://www.alevelwebsite.com:5000
     ports:
       - 5002:5002
+  basket.api:
+    container_name: lde.basket.api
+    build:
+      context: .
+      dockerfile: Basket/Basket.Host/Dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:5003
+      - CatalogUrl=http://www.alevelwebsite.com:5000/api/v1/catalogitem
+    depends_on:
+      - catalog.api
+    ports:
+      - 5003:5003
   nginx:
     image: nginx
     container_name: lde.nginx

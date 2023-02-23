@@ -3,6 +3,7 @@ using Catalog.Host.Models.Response;
 using Catalog.Host.Services.Interfaces;
 using Infrastructure.Identity;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.Extensions.Logging;
 
 namespace Catalog.Host.Controllers;
 
@@ -27,7 +28,9 @@ public class CatalogItemController : ControllerBase
     [ProducesResponseType(typeof(AddItemResponse<int?>), (int)HttpStatusCode.OK)]
     public async Task<IActionResult> Add(CreateProductRequest request)
     {
+        _logger.LogInformation(request.Name, request);
         var result = await _catalogItemService.AddAsync(request.Name, request.Description, request.Price, request.AvailableStock, request.CatalogBrandId, request.CatalogTypeId, request.PictureFileName);
+        _logger.LogInformation(result.ToString());
         return Ok(new AddItemResponse<int?>() { Id = result });
     }
 }

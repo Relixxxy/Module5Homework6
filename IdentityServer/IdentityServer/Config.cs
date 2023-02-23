@@ -32,7 +32,15 @@ namespace IdentityServer
                     {
                         new Scope("catalog.catalogitem"),
                     },
-                }
+                },
+                new ApiResource("basket")
+                {
+                    Scopes = new List<Scope>
+                    {
+                        new Scope("basket.basket"),
+                    },
+                },
+
             };
         }
 
@@ -66,6 +74,22 @@ namespace IdentityServer
                 },
                 new Client
                 {
+                    ClientId = "basket",
+
+                    // no interactive user, use the clientid/secret for authentication
+                    AllowedGrantTypes = GrantTypes.ClientCredentials,
+                    AllowedScopes =
+                    {
+                        "catalog.catalogitem"
+                    },
+                    // secret for authentication
+                    ClientSecrets =
+                    {
+                        new Secret("secret".Sha256())
+                    },
+                },
+                new Client
+                {
                     ClientId = "catalogswaggerui",
                     ClientName = "Catalog Swagger UI",
                     AllowedGrantTypes = GrantTypes.Implicit,
@@ -77,6 +101,21 @@ namespace IdentityServer
                     AllowedScopes =
                     {
                         "mvc", "catalog.catalogitem"
+                    }
+                },
+                new Client
+                {
+                    ClientId = "basketswaggerui",
+                    ClientName = "Basket Swagger UI",
+                    AllowedGrantTypes = GrantTypes.Implicit,
+                    AllowAccessTokensViaBrowser = true,
+
+                    RedirectUris = { $"{configuration["BasketApi"]}/swagger/oauth2-redirect.html" },
+                    PostLogoutRedirectUris = { $"{configuration["BasketApi"]}/swagger/" },
+
+                    AllowedScopes =
+                    {
+                        "mvc", "basket.basket"
                     }
                 },
             };
